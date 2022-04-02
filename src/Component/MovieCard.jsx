@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import { Rating } from 'react-simple-star-rating'
-import { Link,Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 
