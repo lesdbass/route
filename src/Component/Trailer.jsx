@@ -1,5 +1,8 @@
 import React from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams,useNavigate } from 'react-router-dom';
+
+import {button} from 'react-bootstrap';
+
 
 import {getMovie} from './Data';
 
@@ -7,6 +10,8 @@ import {getMovie} from './Data';
 const Trailer = () => {
     let params = useParams(); 
     const mv=getMovie(params.idMovie)
+    const navigate = useNavigate();
+
   return (
     <div className='trailer'>
             
@@ -23,7 +28,9 @@ const Trailer = () => {
             </div>
             <div>
                 <p className='ptrailer'>{mv.descrip}</p>
-            </div>
+                <button className="btn-warning" onClick={() => navigate(-1)} style={{margin : "20px"}}>Go Back</button>
+          
+             </div>
 
     </div>
   )

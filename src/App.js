@@ -4,6 +4,8 @@ import MovieList  from './Component/MovieList';
 import Search from './Component/Search';
 import {Movie} from './Component/Data';
 import AddMovie from './Component/AddMovie';
+import { Routes,Route} from 'react-router-dom'
+import Trailer from './Component/Trailer'
 
 function App() {
 
@@ -43,15 +45,23 @@ function App() {
 
   return (
     <>
-        <h1>Checkpoint Hooks</h1>
+        
+        <Routes>
+                    {/* <Route index path="/" element={<App/>} /> */}
+          <Route path="/" element={
+                        <>
+                            <h1>Checkpoint Hooks</h1>
        
-        <Search searchMovie={searchMovie}/>
-        <AddMovie addNewMovie={addNewMovie} />
-        {/* <AddMovie addNewMovie={addNewMovie} /> */}
-        <div className="App">
-            <MovieList movieData={mtemp}/>
-        </div>
+                            <Search searchMovie={searchMovie}/>
+                            <AddMovie addNewMovie={addNewMovie} />
+                            <div className="App">
+                               <MovieList movieData={mtemp}/>
+                          </div>
+                        </>
 
+                      } />
+                    <Route path="/trailer/:idMovie" element={<Trailer/>} />
+            </Routes>  
     </>
   );
 }

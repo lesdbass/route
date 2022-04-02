@@ -3,16 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes,Route} from 'react-router-dom'
-import Trailer from './Component/Trailer'
+import { BrowserRouter} from 'react-router-dom'
+
 
 ReactDOM.render(
+  
     <BrowserRouter>
-              <App />
-              <Routes>
-                    <Route index path="/" element={<App/>} />
-                    <Route path="/trailer/:idMovie" element={<Trailer/>} />
-            </Routes>
+            <App />  
     </BrowserRouter>,
   document.getElementById('root')
 );

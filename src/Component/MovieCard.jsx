@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import { Rating } from 'react-simple-star-rating'
-import { NavLink,Outlet } from 'react-router-dom'
+import { Link,Outlet } from 'react-router-dom'
 
 
 
@@ -26,12 +26,12 @@ const MovieCard = props => {
                 <h1 className='h1t'>{props.title}</h1>
                 <Rating onClick={handleRating} ratingValue={rating} readonly="false" />
                 <p className="ptext">{props.description}</p>
-                <NavLink to={`/trailer/${props.id}`} target="_blank"  >Trailer</NavLink> 
+                <Link to={`/trailer/${props.id}`} ><button type="button" className='btn-danger'>Trailer</button></Link> 
                 
 
                 {/* <Link to={`/trailer/${props}`}  >Trailer</Link>  */}
             </div>
-            <Outlet />
+            {/* <Outlet /> */}
             
         </div>
            
